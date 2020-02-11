@@ -12,21 +12,37 @@ public class CustomerServices implements CrudServices<Customer> {
 	public CustomerServices(Dao<Customer> customerDao) {
 		this.customerDao = customerDao;
 	}
-	
+
+	@Override
 	public List<Customer> readAll() {
-		return customerDao.readAll();
+			// TODO Auto-generated method stub
+       return customerDao.readAll();
 	}
 
-	public void create(Customer customer) {
-		customerDao.create(customer);
+	@Override
+	public Customer create(Customer t) {
+		// TODO Auto-generated method stub
+		return customerDao.create(t);
 	}
 
-	public void update(long id, Customer t) {
+	@Override
+	public void update(Customer t) {
+		// TODO Auto-generated method stub
+		customerDao.update(t);
 		
 	}
 
-	public void delete(Customer t) {
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		customerDao.delete(id);
+		
+	}
+	
+
 		
 	}
 
-}
+
+
+

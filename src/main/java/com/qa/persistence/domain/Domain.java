@@ -4,15 +4,14 @@ import org.apache.log4j.Logger;
 
 import com.qa.utils.Utils;
 
-public enum Domain {
 
+public enum Domain {
 	CUSTOMER("Information about customers"),
 	ITEM("Individual Items"),
 	ORDER("Purchases of items"),
 	STOP("To close the application");
 	
 	public static final Logger LOGGER = Logger.getLogger(Domain.class);
-
 	private String description;
 	
 	private Domain(String description) {
