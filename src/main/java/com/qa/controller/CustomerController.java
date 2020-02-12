@@ -50,7 +50,7 @@ public class CustomerController implements CrudController<Customer>{
 		LOGGER.info("Please enter the id of the customer you would like to update");
 		int id = Utils.getIntInput(LOGGER);
 //		Integer id = Integer.valueOf(Utils.getInput());
-		LOGGER.info("Please enter a new first name");
+		LOGGER.info("Please enter a new name");
 		String name = Utils.getInput();
 		customerService.update(new Customer(id, name));
 		LOGGER.info("Customer with id "+id+" was updated succesfully");

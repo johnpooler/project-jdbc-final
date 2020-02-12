@@ -5,10 +5,7 @@ public class Customer{
 	private String name;
 	
 	
-//	public Customer(String firstName, String surname) {
-//		this.firstName = firstName;
-//		this.surname = surname;
-//	}
+
 	public Customer(String name) {
 		
 		this.name = name;	
@@ -36,5 +33,5 @@ public class Customer{
 		return "id:" + id + " first name:" + name ;
 	}
 
-	}
+}
 

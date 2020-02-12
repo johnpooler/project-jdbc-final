@@ -26,7 +26,7 @@ public enum Action {
 		return this.name() + ": " + this.description;
 	}
 	/**
-	 * Prints out all posible actions
+	 * Prints out all possible actions
 	 */
 	public static void printActions() {
 		for (Action action : Action.values()) {
