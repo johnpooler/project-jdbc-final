@@ -51,7 +51,7 @@ public enum Action {
 
 >>>>>>> daaa61cbbe27f08d182f3eeb0a9d53945b58fdbb:src/main/java/com/qa/ims/controller/Action.java
 	/**
-	 * Prints out all posible actions
+	 * Prints out all possible actions
 	 */
 	public static void printActions() {
 		for (Action action : Action.values()) {
