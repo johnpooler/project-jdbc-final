@@ -7,7 +7,7 @@ import com.qa.persistence.domain.Customer;
 
 public class CustomerServices implements CrudServices<Customer> {
 
-	Dao<Customer> customerDao;
+	private Dao<Customer> customerDao;
 	
 	public CustomerServices(Dao<Customer> customerDao) {
 		this.customerDao = customerDao;
@@ -15,26 +15,26 @@ public class CustomerServices implements CrudServices<Customer> {
 
 	@Override
 	public List<Customer> readAll() {
-			// TODO Auto-generated method stub
+			
        return customerDao.readAll();
 	}
 
 	@Override
-	public Customer create(Customer t) {
-		// TODO Auto-generated method stub
-		return customerDao.create(t);
+	public Customer create(Customer customer) {
+		
+		return customerDao.create(customer);
 	}
 
 	@Override
-	public void update(Customer t) {
-		// TODO Auto-generated method stub
-		customerDao.update(t);
+	public Customer update(Customer customer) {
+	
+		return customerDao.update(customer);
 		
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
+		
 		customerDao.delete(id);
 		
 	}

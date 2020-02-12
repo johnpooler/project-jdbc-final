@@ -3,17 +3,20 @@ package com.qa.persistence.domain;
 public class Item {
 	private int id;
 	private String name;
-	private int cost;
+	private double cost;
 	
-	public Item(String name, int id, int cost) {
+	public Item(String name, int id, double cost) {
 		this.id=id;
 		this.name=name;
 		this.cost=cost;
 		}
-	public Item(String name, int id) {
-		this.id=id;
+
+	public Item(String name, double cost) {
+		this.cost=cost;
 		this.name=name;
 		}
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -26,10 +29,10 @@ public class Item {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getCost() {
+	public double getCost() {
 		return cost;
 	}
-	public void setCost(int cost) {
+	public void setCost(double cost) {
 		this.cost = cost;
 	}
 	

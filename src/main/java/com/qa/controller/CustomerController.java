@@ -1,5 +1,7 @@
 package com.qa.controller;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.qa.persistence.domain.Customer;
@@ -11,6 +13,7 @@ import com.qa.utils.Utils;
  *
  */
 public class CustomerController implements CrudController<Customer>{
+	
 	public static final Logger LOGGER = Logger.getLogger(CustomerController.class);
 	
 	private CrudServices<Customer> customerService;
@@ -24,36 +27,41 @@ public class CustomerController implements CrudController<Customer>{
 	 * Reads all customers to the logger
 	 */
 	@Override
-	public void readAll() {
-		for(Customer customer: customerService.readAll()) {
+	public List<Customer> readAll() {
+		
+		List<Customer> customers = customerService.readAll();
+		for(Customer customer: customers) {
 			LOGGER.info(customer.toString());
 		}
+		return customers;	
 	}
 	/**
 	 * Creates a customer by taking in user input
 	 */
 	@Override
-	public void create() {
-//		LOGGER.info("Please enter a valid id");
-//		int id = Utils.getIntInput(LOGGER);
+	public Customer create() {
+
 		LOGGER.info("Please enter a first name");
 		String name = Utils.getInput();
 		
-		customerService.create(new Customer( name));
+		Customer customer =customerService.create(new Customer( name));
 		LOGGER.info("New customer created");
+		return customer;
 	}
 	/**
 	 * Updates an existing customer by taking in user input
 	 */
 	@Override
-	public void update() {
+	public Customer update() {
 		LOGGER.info("Please enter the id of the customer you would like to update");
 		int id = Utils.getIntInput(LOGGER);
-//		Integer id = Integer.valueOf(Utils.getInput());
+		
 		LOGGER.info("Please enter a new name");
 		String name = Utils.getInput();
-		customerService.update(new Customer(id, name));
+		
+		Customer customer= customerService.update(new Customer(id, name));
 		LOGGER.info("Customer with id "+id+" was updated succesfully");
+		return customer;
 	}
 	/**
 	 * Deletes an existing customer by the id of the customer
