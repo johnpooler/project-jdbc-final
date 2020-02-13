@@ -74,8 +74,7 @@ public class ItemDaoMysql implements Dao<Item> {
 	public Item create(Item item) {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
 				Statement statement = connection.createStatement();) {
-			statement.executeUpdate("insert into item(name, cost) values('" + item.getName() +", "+item.getCost()+  "')" );
-			//return readLatest();
+			statement.executeUpdate("insert into item(name, cost) values('" + item.getName() +"', "+item.getCost()+  ")" );
 		} catch (Exception e) {
 			LOGGER.debug(e.getStackTrace());
 			LOGGER.error(e.getMessage());
@@ -95,7 +94,7 @@ public class ItemDaoMysql implements Dao<Item> {
 	public Item update(Item item) {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
 				Statement statement = connection.createStatement();) {
-			statement.executeUpdate( "UPDATE item SET name =" + item.getName()+", "+ item.getCost()+" where ID ="+item.getId() );
+			statement.executeUpdate( "UPDATE item SET name ='" + item.getName()+"', cost="+ item.getCost()+" where id ="+item.getId() );
 		} catch (Exception e) {
 			LOGGER.debug(e.getStackTrace());
 			LOGGER.error(e.getMessage());

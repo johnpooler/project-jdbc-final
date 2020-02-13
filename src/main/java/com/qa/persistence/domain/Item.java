@@ -37,6 +37,6 @@ public class Item {
 	}
 	
 	public String toString() {
-		return "id:" + id + " item name:" + name ;
+		return "id:" + id + "	item name:" + name +"          cost:" +cost;
 	}
 }
