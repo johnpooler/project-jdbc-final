@@ -17,7 +17,7 @@ public enum Domain {
 	private Domain(String description) {
 		this.description = description;
 	}
-	
+ 
 	public String description() {
 		return this.name() + ": " +this.description;
 	}
@@ -25,6 +25,7 @@ public enum Domain {
 	public static void printDomains() {
 		for (Domain domain : Domain.values()) {
 			LOGGER.info(domain.description());
+			
 		}
 	}
 	

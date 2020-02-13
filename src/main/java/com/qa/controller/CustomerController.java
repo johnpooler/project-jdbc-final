@@ -23,6 +23,9 @@ public class CustomerController implements CrudController<Customer>{
 	}
 	
 	
+	 public String getInput() {
+		return Utils.getInput();
+	}
 	/**
 	 * Reads all customers to the logger
 	 */
@@ -73,5 +76,6 @@ public class CustomerController implements CrudController<Customer>{
 		customerService.delete(id);
 		LOGGER.info("Customer with id "+id+" was deleted succesfully");
 	}
+
 	
 }
