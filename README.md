@@ -1,4 +1,4 @@
-Project Title
+Inventory Management System
 
 
 Getting Started
