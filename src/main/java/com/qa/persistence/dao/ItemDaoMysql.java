@@ -44,8 +44,8 @@ public class ItemDaoMysql implements Dao<Item> {
 	@Override
 	public List<Item> readAll() {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
-				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("select * from item");) {
+				Statement statement1 = connection.createStatement();
+				ResultSet resultSet = statement1.executeQuery("select * from item");) {
 			
 			
 			ArrayList<Item> items = new ArrayList<>();
@@ -72,8 +72,8 @@ public class ItemDaoMysql implements Dao<Item> {
 	@Override
 	public Item create(Item item) {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
-				Statement statement = connection.createStatement();) {
-			statement.executeUpdate("insert into item(name, cost) values('" + item.getName() +"', "+item.getCost()+  ")" );
+				Statement statement2 = connection.createStatement();) {
+			statement2.executeUpdate("insert into item(name, cost) values('" + item.getName() +"', "+item.getCost()+  ")" );
 		} catch (Exception e) {
 			LOGGER.debug(e.getStackTrace());
 			LOGGER.error(e.getMessage());
@@ -92,8 +92,8 @@ public class ItemDaoMysql implements Dao<Item> {
 	@Override
 	public Item update(Item item) {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
-				Statement statement = connection.createStatement();) {
-			statement.executeUpdate( "UPDATE item SET name ='" + item.getName()+"', cost="+ item.getCost()+" where id ="+item.getId() );
+				Statement statement3 = connection.createStatement();) {
+			statement3.executeUpdate( "UPDATE item SET name ='" + item.getName()+"', cost="+ item.getCost()+" where id ="+item.getId() );
 		} catch (Exception e) {
 			LOGGER.debug(e.getStackTrace());
 			LOGGER.error(e.getMessage());
@@ -110,8 +110,8 @@ public class ItemDaoMysql implements Dao<Item> {
 	@Override
 	public void delete(int id) {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
-				Statement statement = connection.createStatement();) {
-			statement.executeUpdate("delete from item where id = " + id);
+				Statement statement4 = connection.createStatement();) {
+			statement4.executeUpdate("delete from item where id = " + id);
 		} catch (Exception e) {
 			LOGGER.debug(e.getStackTrace());
 			LOGGER.error(e.getMessage());
