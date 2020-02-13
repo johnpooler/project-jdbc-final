@@ -10,7 +10,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.qa.persistence.domain.Customer;
 import com.qa.persistence.domain.Item;
 
 public class ItemDaoMysql implements Dao<Item> {
@@ -38,9 +37,9 @@ public class ItemDaoMysql implements Dao<Item> {
 	}
 	
 	/**
-	 * Reads all customers from the database
+	 * Reads all items from the database with their respective ids and costs
 	 * 
-	 * @return A list of customers
+	 * @return A list of items
 	 */
 	@Override
 	public List<Item> readAll() {
@@ -66,9 +65,9 @@ public class ItemDaoMysql implements Dao<Item> {
 
 	
 	/**
-	 * Creates a customer in the database
+	 * Creates an item in the database
 	 * 
-	 * @param customer - takes in a customer object. id will be ignored
+	 * @param customer - takes in an item object. id will be ignored
 	 */
 	@Override
 	public Item create(Item item) {
@@ -85,10 +84,10 @@ public class ItemDaoMysql implements Dao<Item> {
 	
 	
 	/**
-	 * Updates a customer in the database
+	 * Updates an item in the database
 	 * 
-	 * @param customer - takes in a customer object, the id field will be used to
-	 *                 update that customer in the database
+	 * @param item - takes in an item object, the id field will be used to
+	 *                 update that item in the database
 	 */
 	@Override
 	public Item update(Item item) {
@@ -104,9 +103,9 @@ public class ItemDaoMysql implements Dao<Item> {
 	
 	
 	/**
-	 * Deletes a customer in the database
+	 * Deletes an item from the database
 	 * 
-	 * @param id - id of the customer
+	 * @param id - id of the item
 	 */
 	@Override
 	public void delete(int id) {
