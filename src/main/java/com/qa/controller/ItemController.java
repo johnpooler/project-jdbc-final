@@ -25,12 +25,6 @@ public class ItemController implements CrudController<Item> {
 	/**
 	 * Reads all items to the logger
 	 */
-//	@Override
-//	public void readAll() {
-//		for (Item item : itemService.readAll()) {
-//			LOGGER.info(item.toString());
-//		}
-//	}
 	@Override
 	public List<Item> readAll() {
 		
@@ -50,8 +44,6 @@ public class ItemController implements CrudController<Item> {
 		LOGGER.info("Please enter an item name");
 		String name = Utils.getInput();
 		LOGGER.info("Please enter a cost for your item");
-//		double cost = Utils.getIntInput(LOGGER);
-//		Double cost = Double.valueOf(getInput());
 		Double cost = Double.parseDouble(Utils.getInput());
 
 		Item item = itemService.create(new Item(name, cost));
