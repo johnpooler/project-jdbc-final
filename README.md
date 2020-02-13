@@ -11,7 +11,7 @@ Give examples
 Installing
 A step by step series of examples that tell you how to get a development env running
 
-install mvn
+install 
 
 
 until finished
@@ -46,4 +46,4 @@ License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 Acknowledgments
-Chris perrins help me greatly, along with code reference from https://github.com/christophperrins/ims-demo.
+Chris Perrins help me greatly, along with code reference from https://github.com/christophperrins/ims-demo.
