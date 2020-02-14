@@ -26,7 +26,7 @@ package com.qa.testcontroller;
 //	
 //	/**
 //	 * Spy is used because i want to mock some methods inside the item I'm testing
-//	 * InjectMocks uses dependency injection to insert the mock into the customer controller
+//	 * InjectMocks uses dependency injection to insert the mock into the item controller
 //	 */
 //	@Spy
 //	@InjectMocks
