@@ -32,7 +32,7 @@ public class ItemDaoMysql implements Dao<Item> {
 	Item itemFromResultSet(ResultSet resultSet) throws SQLException {
 		Integer id = resultSet.getInt("id");
 		String name = resultSet.getString("name");
-		Integer cost= resultSet.getInt("cost");
+		Double cost= resultSet.getDouble("cost");
 		return new Item(name, id, cost);
 	}
 	
@@ -100,6 +100,7 @@ public class ItemDaoMysql implements Dao<Item> {
 		}
 		return null;
 	}
+	
 	
 	
 	/**
